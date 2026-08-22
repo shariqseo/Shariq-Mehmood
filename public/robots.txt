@@ -1,0 +1,8 @@
+# robots.txt — https://shariqseo.github.io/Shariq-Mehmood
+User-agent: *
+Allow: /
+
+# No crawlable value in build artifacts
+Disallow: /assets/*.map$
+
+Sitemap: https://shariqseo.github.io/Shariq-Mehmood/sitemap.xml
