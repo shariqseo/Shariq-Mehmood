@@ -1,0 +1,306 @@
+{
+  "meta": {
+    "siteUrl": "https://shariqseo.github.io/Shariq-Mehmood",
+    "title": "Shariq Mehmood — SEO Specialist | On-Page & Technical SEO",
+    "description": "SEO Specialist in Lahore. On-page, off-page and technical SEO for Shopify and WordPress brands in e-commerce and local business. See live client work.",
+    "ogImage": "/images/og-shariq-mehmood.jpg",
+    "ogImageAlt": "Shariq Mehmood, SEO Specialist based in Lahore, Pakistan",
+    "twitterCard": "summary_large_image",
+    "locale": "en_US",
+    "themeColor": "#0C0C0C"
+  },
+  "profile": {
+    "name": "Shariq Mehmood",
+    "shortName": "Shariq",
+    "title": "SEO Specialist",
+    "tagline": "On-page, off-page and technical SEO for Shopify and WordPress brands in e-commerce and local business.",
+    "bio": "SEO Specialist with over a year of hands-on experience across on-page, off-page, and technical SEO for Shopify and WordPress websites in e-commerce and local business. Skilled in keyword research, meta optimization, schema markup, and off-page link building, with hands-on experience in Google Analytics (GA4), Google Business Profile optimization, and technical SEO audits to drive organic growth.",
+    "location": "Lahore, Pakistan",
+    "email": "mianshariq10@gmail.com",
+    "phone": "+92 300 4503534",
+    "phoneHref": "tel:+923004503534",
+    "photo": "/images/shariq-mehmood.jpg",
+    "photoSmall": "/images/shariq-mehmood-360.jpg",
+    "photoAlt": "Portrait of Shariq Mehmood, SEO Specialist",
+    "photoWidth": 720,
+    "photoHeight": 720,
+    "resumeUrl": "/Shariq-Mehmood-SEO-Specialist-Resume.pdf",
+    "resumeFileName": "Shariq-Mehmood-SEO-Specialist-Resume.pdf"
+  },
+  "socials": [
+    {
+      "label": "LinkedIn",
+      "icon": "linkedin",
+      "href": "https://www.linkedin.com/in/shariq-mehmood",
+      "display": "linkedin.com/in/shariq-mehmood"
+    },
+    {
+      "label": "Email",
+      "icon": "mail",
+      "href": "mailto:mianshariq10@gmail.com",
+      "display": "mianshariq10@gmail.com"
+    }
+  ],
+  "competencies": [
+    {
+      "category": "Core SEO",
+      "items": [
+        "On-Page SEO",
+        "Off-Page SEO",
+        "Technical SEO",
+        "Local SEO",
+        "SEO Strategy & Planning"
+      ]
+    },
+    {
+      "category": "Technical",
+      "items": [
+        "Schema Markup",
+        "URL Redirects",
+        "Site Audits",
+        "XML Sitemaps",
+        "Robots.txt",
+        "llms.txt"
+      ]
+    },
+    {
+      "category": "Research",
+      "items": [
+        "Keyword Research",
+        "Semantic Keywords & Topic Clusters",
+        "Competitor Analysis"
+      ]
+    },
+    {
+      "category": "Off-Page",
+      "items": [
+        "Link Building",
+        "Guest Blogging",
+        "Web 2.0 Publishing",
+        "Citation Submissions",
+        "Profile Linking",
+        "Social Sharing"
+      ]
+    },
+    {
+      "category": "Local SEO",
+      "items": [
+        "Google Business Profile (GBP) Optimization",
+        "NAP Consistency"
+      ]
+    },
+    {
+      "category": "Content",
+      "items": [
+        "Meta Titles & Descriptions",
+        "Blog Optimization",
+        "Product Detail Content"
+      ]
+    },
+    {
+      "category": "Tools & Platforms",
+      "items": [
+        "Semrush",
+        "Ahrefs",
+        "Ubersuggest",
+        "Google Search Console",
+        "Bing Webmaster Tools",
+        "PageSpeed Insights",
+        "Google Analytics (GA4)",
+        "Shopify"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "id": "hivenexis-junior-seo-specialist",
+      "company": "HiveNexis",
+      "title": "Junior SEO Specialist",
+      "dates": "Aug 2025 – Jul 2026",
+      "summary": "Ran research, on-page, technical and off-page SEO across client projects and new site builds, reporting on performance throughout.",
+      "highlights": [
+        "Conduct keyword research, competitor analysis, and semantic keyword clustering to guide content strategy and identify high-intent opportunities",
+        "Optimize on-page content, including meta titles, descriptions, and product/blog content, to improve organic visibility and rankings",
+        "Manage Google Business Profiles and monitor performance via GA4 to strengthen local visibility and traffic insights",
+        "Implement schema markup, URL redirects, and page speed improvements to resolve technical SEO issues and improve site health",
+        "Build backlinks and execute off-page campaigns, including directory listings, guest blogging, Web 2.0 publishing, and social sharing, to grow domain authority",
+        "Contribute to full SEO builds for newly-launched websites and deliver performance reports tracking progress across projects"
+      ]
+    },
+    {
+      "id": "hivenexis-seo-intern",
+      "company": "HiveNexis",
+      "title": "SEO Intern",
+      "dates": "",
+      "summary": "Three-month internship on HiveNexis's own company website, covering on-page optimization and off-page link building.",
+      "highlights": [
+        "Completed a 3-month SEO internship working on HiveNexis's own company website, gaining hands-on experience in on-page optimization and off-page link building to improve search visibility"
+      ]
+    },
+    {
+      "id": "aisoftdeveloper-seo-intern",
+      "company": "aisoftdeveloper.uk",
+      "title": "SEO Intern",
+      "dates": "",
+      "summary": "Off-page focused internship building backlinks to support domain authority and search visibility.",
+      "highlights": [
+        "Focused on off-page SEO, building backlinks to support domain authority and search visibility"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "snugyz",
+      "number": "01",
+      "featured": true,
+      "name": "SnuGyz",
+      "subtitle": "Shopify baby-care brand built for parents on the move",
+      "url": "https://snugyz.com/",
+      "displayUrl": "snugyz.com",
+      "industry": "Baby care e-commerce (D2C)",
+      "seoAngle": "E-commerce — product and blog content",
+      "platform": "Shopify",
+      "whatTheSiteDoes": "A direct-to-consumer baby essentials store selling hip-seat and sling carriers, foldable waterproof changing pads, nursing covers and feeding pillows, crawling knee pads, noise-cancelling earmuffs, nasal aspirators, teething sticks, musical play mats, travel potty seats, diaper caddies and stroller fans. Alongside collections and product pages it runs a parenting blog, a reviews page, an FAQ block and a trust bar covering shipping, support and returns.",
+      "whatIWorkedOn": "Keyword research, content optimization & off-page link building for a Shopify baby care brand.",
+      "tags": [
+        "Keyword Research",
+        "Content Optimization",
+        "Off-Page SEO",
+        "Link Building"
+      ],
+      "ogImage": "https://snugyz.com/cdn/shop/files/Logo_fcefd716-fc2a-4eaf-9fba-b7452719a0cf.png?v=1720643362",
+      "ogImageNote": "Reference only - not rendered. Cards use generated covers."
+    },
+    {
+      "id": "asg-consulting",
+      "number": "02",
+      "featured": false,
+      "name": "ASG Consulting",
+      "subtitle": "RICS-regulated building surveyors in Liverpool & the North West",
+      "url": "https://asg-consulting.co.uk/",
+      "displayUrl": "asg-consulting.co.uk",
+      "industry": "Building surveying & construction consultancy",
+      "seoAngle": "Local services + B2B lead generation",
+      "platform": "WordPress (Elementor)",
+      "whatTheSiteDoes": "A RICS-regulated building surveying and construction consultancy operating from Liverpool across Merseyside, the Wirral, Cheshire, Manchester and the wider North West. The site sells twelve specialist services — HomeBuyer (RICS Level 2) and full Building Survey (Level 3) reports, commercial surveying, measured building surveys, building pathology and defect diagnosis, high-level drone surveying, housing disrepair reporting, dilapidations, employer's agent work, asset management and structural engineering. It runs a dedicated service page per discipline, an 'Areas We Cover' page, published case studies, a Learning & Resources blog, and an embedded Google review feed. It trades as Absolute Services Group Ltd.",
+      "whatIWorkedOn": "End-to-end keyword research and on-page, off-page & technical SEO for a UK building surveying firm.",
+      "tags": [
+        "Keyword Research",
+        "On-Page SEO",
+        "Technical SEO",
+        "Off-Page SEO"
+      ],
+      "ogImage": "https://asg-consulting.co.uk/wp-content/uploads/2026/07/cropped-asg-logo-png-file-02-270x270.png",
+      "ogImageNote": "Reference only - not rendered. Cards use generated covers."
+    },
+    {
+      "id": "rx-furnace-industry",
+      "number": "03",
+      "featured": false,
+      "name": "RX Furnace Industry",
+      "subtitle": "Global industrial heat-treatment furnace manufacturer",
+      "url": "https://www.rxfurnaceindustry.com/",
+      "displayUrl": "rxfurnaceindustry.com",
+      "industry": "Industrial manufacturing — heat treatment equipment",
+      "seoAngle": "B2B export / international multilingual",
+      "platform": "Custom multilingual CMS",
+      "whatTheSiteDoes": "The export-facing site for Dongguan Rexin Machinery Technology Co., Ltd., a Guangdong-based industrial furnace manufacturer founded in 2008. It carries a deep equipment catalogue — tempering, annealing (including stainless-steel bright annealing lines), brazing, nitriding, carburizing and quenching, hardening, sintering and solution-treatment furnaces, plus ammonia crackers and furnace accessories — organised into category and sub-category pages, with industries-served, technical support, specifications, FAQ and news sections. It serves buyers across Europe, the Americas and Asia through localized Spanish, Arabic, Russian, Indonesian and Vietnamese subdomains.",
+      "whatIWorkedOn": "Off-page SEO & link building for a global industrial furnace manufacturer.",
+      "tags": [
+        "Off-Page SEO",
+        "Link Building"
+      ],
+      "ogImage": "",
+      "ogImageNote": "Reference only - not rendered. Cards use generated covers."
+    },
+    {
+      "id": "fiddlebling",
+      "number": "04",
+      "featured": false,
+      "name": "Fiddlebling",
+      "subtitle": "Humor-first merch store for fiddlers and violinists",
+      "url": "https://www.fiddlebling.com/",
+      "displayUrl": "fiddlebling.com",
+      "industry": "Musician merch & apparel e-commerce",
+      "seoAngle": "E-commerce — niche interest and gifting",
+      "platform": "Shopify",
+      "whatTheSiteDoes": "A musician-led apparel and gift store positioning itself as the first humor-based store for fiddlers and violinists. It sells t-shirts, mugs, soy candles and gifts, merchandised both by audience (Music Teacher, Future Fiddlers, Intentionally Offbeat) and by instrument (Fiddle, Cello). Beyond the storefront it publishes a musician-focused blog and maintains a fiddle camp directory, giving the site editorial surface area well beyond product pages.",
+      "whatIWorkedOn": "On-page & technical SEO for a Shopify musician merch brand.",
+      "tags": [
+        "On-Page SEO",
+        "Technical SEO"
+      ],
+      "ogImage": "https://www.fiddlebling.com/cdn/shop/files/Fiddlebling-01.png?v=1756828856",
+      "ogImageNote": "Reference only - not rendered. Cards use generated covers."
+    },
+    {
+      "id": "hivenexis",
+      "number": "05",
+      "featured": false,
+      "name": "HiveNexis",
+      "subtitle": "Company website of the agency I work for",
+      "url": "https://hivenexis.com/",
+      "displayUrl": "hivenexis.com",
+      "industry": "Digital & eCommerce agency",
+      "seoAngle": "Agency — service-led B2B",
+      "platform": "WordPress (Elementor)",
+      "whatTheSiteDoes": "The agency's own site, selling eCommerce and Shopify development, Shopify migration, web and mobile app development, SEO, Google Business Profile optimization, social media marketing and ads, AI-powered lead generation and business automation. Each offering has its own service page, supported by a blog, a five-step delivery methodology section, a client logo wall and a contact flow. The agency lists offices in Lahore, Sugar Land (Texas) and Perth.",
+      "whatIWorkedOn": "Independently led off-page SEO for the agency's own site.",
+      "tags": [
+        "Off-Page SEO",
+        "Link Building"
+      ],
+      "ogImage": "https://hivenexis.com/wp-content/uploads/2025/09/home-section-img.webp",
+      "ogImageNote": "Reference only - not rendered. Cards use generated covers."
+    }
+  ],
+  "education": [
+    {
+      "id": "punjab-bs-environmental-sciences",
+      "degree": "Bachelor of Science in Environmental Sciences",
+      "institution": "University of the Punjab, Lahore",
+      "dates": ""
+    }
+  ],
+  "certifications": [
+    {
+      "id": "coursera-seo",
+      "name": "Search Engine Optimization",
+      "issuer": "Coursera",
+      "dates": ""
+    },
+    {
+      "id": "isdi-seo-digital-marketing",
+      "name": "SEO & Digital Marketing",
+      "issuer": "International Skills Development Institution",
+      "dates": ""
+    }
+  ],
+  "testimonials": [],
+  "nav": [
+    {
+      "label": "HOME",
+      "href": "#home"
+    },
+    {
+      "label": "ABOUT",
+      "href": "#about"
+    },
+    {
+      "label": "SKILLS",
+      "href": "#skills"
+    },
+    {
+      "label": "EXPERIENCE",
+      "href": "#experience"
+    },
+    {
+      "label": "PROJECTS",
+      "href": "#projects"
+    },
+    {
+      "label": "CONTACT",
+      "href": "#contact"
+    }
+  ]
+}

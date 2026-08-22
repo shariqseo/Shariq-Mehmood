@@ -1,0 +1,119 @@
+@import "@fontsource/kanit/latin-300.css";
+@import "@fontsource/kanit/latin-400.css";
+@import "@fontsource/kanit/latin-500.css";
+@import "@fontsource/kanit/latin-600.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  /* Every in-page anchor clears the sticky navbar. */
+  section[id],
+  footer[id] {
+    scroll-margin-top: 80px;
+  }
+
+  body {
+    @apply bg-ink text-white font-sans antialiased;
+    /* Prose must never break mid-word. */
+    word-break: normal;
+    overflow-wrap: break-word;
+    hyphens: none;
+  }
+
+  p,
+  li,
+  h1,
+  h2,
+  h3,
+  h4 {
+    word-break: normal;
+    overflow-wrap: break-word;
+    hyphens: none;
+  }
+
+  ::selection {
+    background: rgba(74, 222, 128, 0.25);
+    color: #ffffff;
+  }
+
+  :focus-visible {
+    outline: 2px solid #4ade80;
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+}
+
+@layer components {
+  /* Chrome/silver display gradient — exact spec from the brief. */
+  .hero-heading {
+    background: linear-gradient(180deg, #646973 0%, #bbccd7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Green-to-teal accent gradient — the organic growth theme. */
+  .accent-text {
+    background: linear-gradient(100deg, #4ade80 0%, #14b8a6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .accent-rule {
+    background: linear-gradient(90deg, #4ade80 0%, #14b8a6 100%);
+  }
+
+  .eyebrow {
+    @apply font-mono text-[11px] uppercase tracking-label text-subtle;
+  }
+
+  .card-surface {
+    @apply rounded-2xl border border-hairline bg-ink-card;
+  }
+
+  .pill {
+    @apply inline-flex items-center gap-2 rounded-full border border-hairline bg-ink-raised px-4 py-2 text-sm text-white/80 transition-colors duration-200;
+  }
+
+  .pill:hover {
+    @apply border-hairlineStrong bg-ink-hover text-white;
+  }
+
+  .tag-chip {
+    @apply inline-flex items-center rounded-full border border-hairline bg-white/[0.03] px-3 py-1 text-[12px] leading-5 text-white/70;
+  }
+
+  .date-pill {
+    @apply inline-flex items-center rounded-md border border-hairline bg-white/[0.03] px-2.5 py-1 font-mono text-[11px] tracking-wide text-muted;
+  }
+
+  .row-number {
+    @apply font-mono text-[12px] tabular-nums text-subtle;
+  }
+}
+
+/* Respect reduced-motion: kill transitions, animations and smooth scrolling. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
