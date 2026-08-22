@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import { usePortfolio } from "../hooks/usePortfolio";
+import { assetUrl, usePortfolio } from "../hooks/usePortfolio";
 
 export default function Navbar() {
   const { profile, nav } = usePortfolio();
@@ -65,7 +65,7 @@ export default function Navbar() {
 
         <div className="flex items-center gap-3">
           <a
-            href={profile.resumeUrl}
+            href={assetUrl(profile.resumeUrl)}
             download={profile.resumeFileName}
             className="hidden rounded-full border border-hairline bg-white/[0.04] px-4 py-2 font-mono text-[11px] uppercase tracking-label text-white/85 transition-colors duration-200 hover:border-hairlineStrong hover:bg-white/[0.08] hover:text-white sm:inline-flex"
           >
@@ -109,7 +109,7 @@ export default function Navbar() {
           ))}
           <li className="pt-4">
             <a
-              href={profile.resumeUrl}
+              href={assetUrl(profile.resumeUrl)}
               download={profile.resumeFileName}
               onClick={() => setOpen(false)}
               className="inline-flex rounded-full border border-hairline bg-white/[0.04] px-4 py-2 font-mono text-[11px] uppercase tracking-label text-white/85"

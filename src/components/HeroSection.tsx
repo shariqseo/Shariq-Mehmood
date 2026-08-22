@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Download, Linkedin, Mail, MapPin } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
-import { usePersonSchema, usePortfolio, useSocials } from "../hooks/usePortfolio";
+import { assetUrl, usePersonSchema, usePortfolio, useSocials } from "../hooks/usePortfolio";
 import type { SocialIcon } from "../types/portfolio";
 
 const ICONS: Record<SocialIcon, LucideIcon> = {
@@ -91,7 +91,7 @@ export default function HeroSection() {
             })}
 
             <a
-              href={profile.resumeUrl}
+              href={assetUrl(profile.resumeUrl)}
               download={profile.resumeFileName}
               className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-ink transition-transform duration-200 hover:-translate-y-0.5"
               style={{
@@ -132,7 +132,7 @@ export default function HeroSection() {
             />
             <div className="relative h-full w-full overflow-hidden rounded-full border border-hairlineStrong">
               <img
-                src={profile.photo}
+                src={assetUrl(profile.photo)}
                 alt={profile.photoAlt}
                 width={profile.photoWidth}
                 height={profile.photoHeight}

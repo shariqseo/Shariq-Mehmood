@@ -2,6 +2,18 @@ import raw from "../data/portfolio.json";
 import type { PortfolioData, Project, Social } from "../types/portfolio";
 
 const data = raw as unknown as PortfolioData;
+/**
+ * Resolves a root-relative public-folder path (e.g. "/images/photo.jpg")
+ * against Vite's configured base path, so assets resolve correctly when
+ * the site is deployed under a subpath (e.g. GitHub Pages project sites
+ * at username.github.io/repo-name/). Leaves already-absolute URLs
+ * (http/https) untouched.
+ */
+export function assetUrl(path: string): string {
+  if (!path || /^https?:\/\//.test(path)) return path;
+  const base = import.meta.env.BASE_URL; // e.g. "/Shariq-Mehmood/"
+  return base.replace(/\/$/, "") + "/" + path.replace(/^\//, "");
+}
 
 /**
  * Single source of truth for every piece of copy on this site.
