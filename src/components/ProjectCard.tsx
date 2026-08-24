@@ -9,15 +9,24 @@ interface ProjectCardProps {
 }
 
 /**
- * Generated cover. Every card gets the same treatment so no project looks
- * cheaper than another, and the page ships zero cross-origin image requests
- * (nothing to 404, nothing to shift layout, nothing to slow LCP).
- * The pattern angle varies by index so the five covers stay distinguishable.
+ * Live screenshot of the project's actual site, generated on-demand by
+ * WordPress's public mshots service (no API key, no self-hosting). If the
+ * screenshot fails to load — service hiccup, offline site — we fall back to
+ * the generated pattern cover below rather than showing a broken image.
+ */
+function screenshotUrl(pageUrl: string): string {
+  return `https://s0.wp.com/mshots/v1/${encodeURIComponent(pageUrl)}?w=1200&h=750`;
+}
+
+/**
+ * Generated cover — the fallback for when a live screenshot isn't available.
+ * The pattern angle varies by index so covers stay visually distinguishable.
  */
 function ProjectCover({ project, index }: ProjectCardProps) {
   const angle = [22, -18, 38, -32, 12][index % 5];
   const gap = [14, 18, 11, 22, 16][index % 5];
   const patternId = `cover-lines-${project.id}`;
+  const [screenshotFailed, setScreenshotFailed] = useState(false);
 
   return (
     <div
@@ -25,38 +34,52 @@ function ProjectCover({ project, index }: ProjectCardProps) {
       role="img"
       aria-label={`${project.name} — ${project.industry}`}
     >
-      <svg
-        className="absolute inset-0 h-full w-full"
-        aria-hidden="true"
-        focusable="false"
-      >
-        <defs>
-          <pattern
-            id={patternId}
-            width={gap}
-            height={gap}
-            patternUnits="userSpaceOnUse"
-            patternTransform={`rotate(${angle})`}
-          >
-            <line
-              x1="0"
-              y1="0"
-              x2="0"
-              y2={gap}
-              stroke="rgba(255,255,255,0.055)"
-              strokeWidth="1"
-            />
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill={`url(#${patternId})`} />
-      </svg>
+      {!screenshotFailed ? (
+        <img
+          src={screenshotUrl(project.url)}
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          decoding="async"
+          className="absolute inset-0 h-full w-full object-cover object-top"
+          onError={() => setScreenshotFailed(true)}
+        />
+      ) : (
+        <svg
+          className="absolute inset-0 h-full w-full"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <defs>
+            <pattern
+              id={patternId}
+              width={gap}
+              height={gap}
+              patternUnits="userSpaceOnUse"
+              patternTransform={`rotate(${angle})`}
+            >
+              <line
+                x1="0"
+                y1="0"
+                x2="0"
+                y2={gap}
+                stroke="rgba(255,255,255,0.055)"
+                strokeWidth="1"
+              />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill={`url(#${patternId})`} />
+        </svg>
+      )}
 
+      {/* Legibility scrim over the screenshot/pattern so the label text stays readable */}
       <div
         aria-hidden="true"
         className="absolute inset-0"
         style={{
-          background:
-            "radial-gradient(70% 90% at 88% 6%, rgba(20,184,166,0.20) 0%, rgba(12,12,12,0) 62%), radial-gradient(60% 70% at 4% 96%, rgba(74,222,128,0.12) 0%, rgba(12,12,12,0) 60%)",
+          background: screenshotFailed
+            ? "radial-gradient(70% 90% at 88% 6%, rgba(20,184,166,0.20) 0%, rgba(12,12,12,0) 62%), radial-gradient(60% 70% at 4% 96%, rgba(74,222,128,0.12) 0%, rgba(12,12,12,0) 60%)"
+            : "linear-gradient(180deg, rgba(12,12,12,0.05) 0%, rgba(12,12,12,0.15) 55%, rgba(12,12,12,0.88) 100%)",
         }}
       />
 
@@ -162,7 +185,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           </ul>
 
           <div className="mt-7 flex flex-wrap items-center gap-3">
-            <a
+            
               href={project.url}
               target="_blank"
               rel="noopener noreferrer"
