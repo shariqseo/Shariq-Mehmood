@@ -170,7 +170,7 @@
       ],
       "ogImage": "https://snugyz.com/cdn/shop/files/Logo_fcefd716-fc2a-4eaf-9fba-b7452719a0cf.png?v=1720643362",
       "ogImageNote": "Reference only - not rendered. Cards use generated covers.",
-      "image": "/images/snugyz.jpg"
+      "image": "/images/snugyz.png"
     },
     {
       "id": "asg-consulting",
@@ -193,7 +193,7 @@
       ],
       "ogImage": "https://asg-consulting.co.uk/wp-content/uploads/2026/07/cropped-asg-logo-png-file-02-270x270.png",
       "ogImageNote": "Reference only - not rendered. Cards use generated covers.",
-      "image": "/images/asg-consulting.jpg"
+      "image": "/images/asg-consulting.png"
     },
     {
       "id": "rx-furnace-industry",
@@ -214,7 +214,7 @@
       ],
       "ogImage": "",
       "ogImageNote": "Reference only - not rendered. Cards use generated covers.",
-      "image": "/images/rx-furnace-industry.jpg"
+      "image": "/images/rx-furnace-industry.png"
     },
     {
       "id": "fiddlebling",
@@ -235,7 +235,7 @@
       ],
       "ogImage": "https://www.fiddlebling.com/cdn/shop/files/Fiddlebling-01.png?v=1756828856",
       "ogImageNote": "Reference only - not rendered. Cards use generated covers.",
-      "image": "/images/fiddlebling.jpg"
+      "image": "/images/fiddlebling.png"
     },
     {
       "id": "hivenexis",
@@ -256,7 +256,7 @@
       ],
       "ogImage": "https://hivenexis.com/wp-content/uploads/2025/09/home-section-img.webp",
       "ogImageNote": "Reference only - not rendered. Cards use generated covers.",
-      "image": "/images/hivenexis.jpg"
+      "image": "/images/hivenexis.png"
     }
   ],
   "education": [
