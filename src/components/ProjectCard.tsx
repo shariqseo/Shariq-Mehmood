@@ -9,24 +9,17 @@ interface ProjectCardProps {
 }
 
 /**
- * Live screenshot of the project's actual site, generated on-demand by
- * WordPress's public mshots service (no API key, no self-hosting). If the
- * screenshot fails to load — service hiccup, offline site — we fall back to
- * the generated pattern cover below rather than showing a broken image.
- */
-function screenshotUrl(pageUrl: string): string {
-  return `https://s0.wp.com/mshots/v1/${encodeURIComponent(pageUrl)}?w=1200&h=750`;
-}
-
-/**
- * Generated cover — the fallback for when a live screenshot isn't available.
- * The pattern angle varies by index so covers stay visually distinguishable.
+ * Generated cover — the fallback for when no real project image is set,
+ * or when the real image fails to load. The pattern angle varies by index
+ * so covers stay visually distinguishable from one another.
  */
 function ProjectCover({ project, index }: ProjectCardProps) {
   const angle = [22, -18, 38, -32, 12][index % 5];
   const gap = [14, 18, 11, 22, 16][index % 5];
   const patternId = `cover-lines-${project.id}`;
-  const [screenshotFailed, setScreenshotFailed] = useState(false);
+  const hasImage = Boolean(project.ogImage && project.ogImage.trim().length > 0);
+  const [imageFailed, setImageFailed] = useState(false);
+  const showImage = hasImage && !imageFailed;
 
   return (
     <div
@@ -34,15 +27,15 @@ function ProjectCover({ project, index }: ProjectCardProps) {
       role="img"
       aria-label={`${project.name} — ${project.industry}`}
     >
-      {!screenshotFailed ? (
+      {showImage ? (
         <img
-          src={screenshotUrl(project.url)}
+          src={project.ogImage}
           alt=""
           aria-hidden="true"
           loading="lazy"
           decoding="async"
-          className="absolute inset-0 h-full w-full object-cover object-top"
-          onError={() => setScreenshotFailed(true)}
+          className="absolute inset-0 h-full w-full object-cover"
+          onError={() => setImageFailed(true)}
         />
       ) : (
         <svg
@@ -72,34 +65,47 @@ function ProjectCover({ project, index }: ProjectCardProps) {
         </svg>
       )}
 
-      {/* Legibility scrim over the screenshot/pattern so the label text stays readable */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0"
-        style={{
-          background: screenshotFailed
-            ? "radial-gradient(70% 90% at 88% 6%, rgba(20,184,166,0.20) 0%, rgba(12,12,12,0) 62%), radial-gradient(60% 70% at 4% 96%, rgba(74,222,128,0.12) 0%, rgba(12,12,12,0) 60%)"
-            : "linear-gradient(180deg, rgba(12,12,12,0.05) 0%, rgba(12,12,12,0.15) 55%, rgba(12,12,12,0.88) 100%)",
-        }}
-      />
+      {/* Legibility scrim — only needed over the abstract pattern; a real
+          screenshot gets small pill labels instead of a full-bleed gradient. */}
+      {!showImage && (
+        <div
+          aria-hidden="true"
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(70% 90% at 88% 6%, rgba(20,184,166,0.20) 0%, rgba(12,12,12,0) 62%), radial-gradient(60% 70% at 4% 96%, rgba(74,222,128,0.12) 0%, rgba(12,12,12,0) 60%)",
+          }}
+        />
+      )}
 
-      <div className="relative flex h-full flex-col justify-between p-5 sm:p-7">
-        <div className="flex items-start justify-between gap-4">
-          <span className="font-mono text-[11px] uppercase tracking-label text-subtle">
+      {showImage ? (
+        <div className="relative flex h-full flex-col justify-between p-4 sm:p-5">
+          <span className="inline-flex w-fit items-center rounded-full border border-hairlineStrong bg-ink/80 px-3 py-1 font-mono text-[10px] uppercase tracking-label text-white/85 backdrop-blur-sm">
             {project.platform}
           </span>
-          <span className="accent-rule h-px w-10 rounded-full" aria-hidden="true" />
-        </div>
-
-        <div>
-          <p className="hero-heading text-3xl font-semibold leading-none tracking-tightest sm:text-5xl lg:text-6xl">
-            {project.name}
-          </p>
-          <p className="mt-3 font-mono text-[11px] uppercase tracking-label text-subtle">
+          <span className="inline-flex w-fit items-center rounded-full border border-hairlineStrong bg-ink/80 px-3 py-1 font-mono text-[10px] uppercase tracking-label text-white/85 backdrop-blur-sm">
             {project.displayUrl}
-          </p>
+          </span>
         </div>
-      </div>
+      ) : (
+        <div className="relative flex h-full flex-col justify-between p-5 sm:p-7">
+          <div className="flex items-start justify-between gap-4">
+            <span className="font-mono text-[11px] uppercase tracking-label text-subtle">
+              {project.platform}
+            </span>
+            <span className="accent-rule h-px w-10 rounded-full" aria-hidden="true" />
+          </div>
+
+          <div>
+            <p className="hero-heading text-3xl font-semibold leading-none tracking-tightest sm:text-5xl lg:text-6xl">
+              {project.name}
+            </p>
+            <p className="mt-3 font-mono text-[11px] uppercase tracking-label text-subtle">
+              {project.displayUrl}
+            </p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
@@ -186,7 +192,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
 
           <div className="mt-7 flex flex-wrap items-center gap-3">
             
-             <a href={project.url}
+              href={project.url}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium text-ink transition-transform duration-200 hover:-translate-y-0.5"
