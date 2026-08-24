@@ -70,6 +70,8 @@ export interface Project {
   /** Reference only. Cards render generated covers, never a remote image. */
   ogImage: string;
   ogImageNote?: string;
+  /** Optional self-hosted cover screenshot, e.g. "/images/projects/snugyz.jpg". */
+  image?: string;
 }
 
 export interface EducationEntry {

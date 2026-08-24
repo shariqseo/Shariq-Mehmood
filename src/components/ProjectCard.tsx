@@ -1,6 +1,7 @@
 import { useId, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Minus, Plus } from "lucide-react";
+import { assetUrl } from "../hooks/usePortfolio";
 import type { Project } from "../types/portfolio";
 
 interface ProjectCardProps {
@@ -17,7 +18,7 @@ function ProjectCover({ project, index }: ProjectCardProps) {
   const angle = [22, -18, 38, -32, 12][index % 5];
   const gap = [14, 18, 11, 22, 16][index % 5];
   const patternId = `cover-lines-${project.id}`;
-  const hasImage = Boolean(project.ogImage && project.ogImage.trim().length > 0);
+  const hasImage = Boolean(project.image && project.image.trim().length > 0);
   const [imageFailed, setImageFailed] = useState(false);
   const showImage = hasImage && !imageFailed;
 
@@ -29,7 +30,7 @@ function ProjectCover({ project, index }: ProjectCardProps) {
     >
       {showImage ? (
         <img
-          src={project.ogImage}
+          src={assetUrl(project.image!)}
           alt=""
           aria-hidden="true"
           loading="lazy"
@@ -78,34 +79,14 @@ function ProjectCover({ project, index }: ProjectCardProps) {
         />
       )}
 
-      {showImage ? (
-        <div className="relative flex h-full flex-col justify-between p-4 sm:p-5">
-          <span className="inline-flex w-fit items-center rounded-full border border-hairlineStrong bg-ink/80 px-3 py-1 font-mono text-[10px] uppercase tracking-label text-white/85 backdrop-blur-sm">
-            {project.platform}
-          </span>
-          <span className="inline-flex w-fit items-center rounded-full border border-hairlineStrong bg-ink/80 px-3 py-1 font-mono text-[10px] uppercase tracking-label text-white/85 backdrop-blur-sm">
-            {project.displayUrl}
-          </span>
-        </div>
-      ) : (
-        <div className="relative flex h-full flex-col justify-between p-5 sm:p-7">
-          <div className="flex items-start justify-between gap-4">
-            <span className="font-mono text-[11px] uppercase tracking-label text-subtle">
-              {project.platform}
-            </span>
-            <span className="accent-rule h-px w-10 rounded-full" aria-hidden="true" />
-          </div>
-
-          <div>
-            <p className="hero-heading text-3xl font-semibold leading-none tracking-tightest sm:text-5xl lg:text-6xl">
-              {project.name}
-            </p>
-            <p className="mt-3 font-mono text-[11px] uppercase tracking-label text-subtle">
-              {project.displayUrl}
-            </p>
-          </div>
-        </div>
-      )}
+      <div className="relative flex h-full flex-col justify-between p-4 sm:p-5">
+        <span className="inline-flex w-fit items-center rounded-full border border-hairlineStrong bg-ink/80 px-3 py-1 font-mono text-[10px] uppercase tracking-label text-white/85 backdrop-blur-sm">
+          {project.platform}
+        </span>
+        <span className="inline-flex w-fit items-center rounded-full border border-hairlineStrong bg-ink/80 px-3 py-1 font-mono text-[10px] uppercase tracking-label text-white/85 backdrop-blur-sm">
+          {project.displayUrl}
+        </span>
+      </div>
     </div>
   );
 }
@@ -191,8 +172,8 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           </ul>
 
           <div className="mt-7 flex flex-wrap items-center gap-3">
-            
-             <a href={project.url}
+            <a
+              href={project.url}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium text-ink transition-transform duration-200 hover:-translate-y-0.5"
